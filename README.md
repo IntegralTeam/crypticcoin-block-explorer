@@ -33,6 +33,7 @@ export NVM_DIR="$HOME/.nvm"
 
 exit
 
+bash block-explorer.sh
 
 ```
 The script requires you to logout when it is finished, log back in and run block-explorer.sh. It outputs the commands to do so.
