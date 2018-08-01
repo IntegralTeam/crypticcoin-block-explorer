@@ -57,7 +57,7 @@ cat << EOF > bitcore-node.json
     "bitcoind": {
       "spawn": {
         "datadir": "./data",
-        "exec": "./secretcoin/src/zcashd"
+        "exec": "./secretcoin/src/crypticcoind"
       }
     }
   }
@@ -66,7 +66,7 @@ cat << EOF > bitcore-node.json
 EOF
 
 # create .conf
-cat << EOF > ./data/zcash.conf
+cat << EOF > ./data/crypticcoin.conf
 addnode=195.201.141.24
 server=1
 testnet=0
