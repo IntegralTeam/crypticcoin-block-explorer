@@ -39,7 +39,7 @@ cd crypticcoin-explorer/
 bash start_explorer.sh
 
 ```
-The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh.
+The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh. Make sure "servicesConfig"."exec" inside bitcore-node.json points to your crypticcoind executable.
 
 The server runs in the foreground, and for production use scripts from "To setup production" section.
 
