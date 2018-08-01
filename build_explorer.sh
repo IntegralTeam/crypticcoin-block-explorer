@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Build block explorer
+
+set -o errexit
+set -o pipefail
+set -o nounset
 
 echo "switching to correct node version"
 echo
