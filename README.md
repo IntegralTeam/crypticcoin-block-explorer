@@ -33,16 +33,27 @@ export NVM_DIR="$HOME/.nvm"
 
 exit
 
-bash block-explorer.sh
+bash build_explorer.sh
+
+bash start_explorer.sh
 
 ```
-The script requires you to logout when it is finished, log back in and run block-explorer.sh. It outputs the commands to do so.
+The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh. It outputs the commands to do so.
 
-The command to run the block explorer is output at the end of the second script. 
-The server runs in the foreground, and for production use you will want to run it in a tmux or screen session, or under a process manager such as supervisor.
+The server runs in the foreground, and for production use scripts from "To setup production" section.
 
 The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface.
 
 All actions performed by the script are thouroughly commented. 
 
-## To setup prod
+## To setup production
+
+*  Start in production mode:
+bash start_production_explorer.sh
+*  Stop:
+bash stop_production_explorer.sh
+*  Monitoring:
+bash monitor_production_explorer.sh
+
+
+
