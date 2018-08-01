@@ -34,7 +34,8 @@ export NVM_DIR="$HOME/.nvm"
 exit
 
 bash build_explorer.sh
-
+cp *.ch crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
+cd crypticcoin-explorer/
 bash start_explorer.sh
 
 ```
@@ -48,12 +49,18 @@ All actions performed by the script are thouroughly commented.
 
 ## To setup production
 
-### Start in production mode:
+##### Start in production mode:
+```
 bash start_production_explorer.sh
-### Stop:
+```
+##### Stop:
+```
 bash stop_production_explorer.sh
-### Monitoring:
+```
+##### Monitoring:
+```
 bash monitor_production_explorer.sh
+```
 
 
 
