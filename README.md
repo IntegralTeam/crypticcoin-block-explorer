@@ -34,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 exit
 
 bash build_explorer.sh
-cp *.ch crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
+cp *.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
 cd crypticcoin-explorer/
 bash start_explorer.sh
 
