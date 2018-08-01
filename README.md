@@ -48,11 +48,11 @@ All actions performed by the script are thouroughly commented.
 
 ## To setup production
 
-*  Start in production mode:
+### Start in production mode:
 bash start_production_explorer.sh
-*  Stop:
+### Stop:
 bash stop_production_explorer.sh
-*  Monitoring:
+### Monitoring:
 bash monitor_production_explorer.sh
 
 
