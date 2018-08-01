@@ -88,6 +88,10 @@ EOF
 
 
 echo "---------------"
-# start block explorer
-echo "To start the block explorer, from within the crypticcoin-explorer directory issue the command:"
-echo " nvm use v4; ./node_modules/bitcore-node-crypticcoin/bin/bitcore-node start"
+echo "installing pm2"
+echo
+
+sudo npm install pm2 -g
+
+echo "---------------"
+echo "complete"
