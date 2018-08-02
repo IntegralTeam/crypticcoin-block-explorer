@@ -43,7 +43,7 @@ The script requires you to logout when it is finished, log back in and run build
 
 The server runs in the foreground, and for production use scripts from "To setup production" section.
 
-The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface. You can the port in crypticcoin-explorer/bitcore-node.json.
+The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface. You can change the port in crypticcoin-explorer/bitcore-node.json.
 
 All actions performed by the script are thouroughly commented. 
 
