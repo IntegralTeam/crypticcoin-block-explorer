@@ -72,7 +72,7 @@ EOF
 
 # create .conf
 cat << EOF > ./data/crypticcoin.conf
-addnode=195.201.141.24
+addnode=2yt4fstq5oacwwh5.onion
 server=1
 testnet=0
 whitelist=127.0.0.1
