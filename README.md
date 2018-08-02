@@ -39,11 +39,11 @@ cd crypticcoin-explorer/
 bash start_explorer.sh
 
 ```
-The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh. Make sure "servicesConfig"."exec" inside bitcore-node.json points to your crypticcoind executable.
+The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh. Make sure "servicesConfig"."exec" inside crypticcoin-explorer/bitcore-node.json points to your crypticcoind executable.
 
 The server runs in the foreground, and for production use scripts from "To setup production" section.
 
-The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface.
+The block explorer will be available on http://localhost:3001/insight/ and any additional IP addresses your server has bound to its network interface. You can the port in crypticcoin-explorer/bitcore-node.json.
 
 All actions performed by the script are thouroughly commented. 
 
