@@ -74,6 +74,7 @@ EOF
 cat << EOF > ./data/crypticcoin.conf
 addnode=2yt4fstq5oacwwh5.onion
 server=1
+listen=1
 testnet=0
 whitelist=127.0.0.1
 txindex=1
