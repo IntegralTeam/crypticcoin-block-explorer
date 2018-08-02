@@ -6,16 +6,19 @@ Script to install and setup a CrypticCoin block explorer on Ubuntu 16.x or newer
 
 On a fresh Ubuntu/Debian server, from a non-root user's home directory, run the following commands:
 ```
+# get the packages
 sudo apt-get update
 
 sudo apt-get -y install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget curl bsdmainutils automake
 
+# get source codes for the explorer and daemon
 git clone https://git.sfxdx.ru/cryptic/crypticcoin-block-explorer.git
 
 cp ./crypticcoin-block-explorer/block-explorer.sh ./block-explorer.sh
 
 git clone https://git.sfxdx.ru/cryptic/secretcoin.git
 
+# build the daemon
 cd secretcoin
 
 ./zcutil/fetch-params.sh
@@ -24,15 +27,22 @@ cd secretcoin
 
 cd ..
 
-sudo apt-get -y install npm
+# install NodeJS
+bash getAndBuildNodeJS-4.9.1.sh
+cd node-4.9.1/
+sudo make install
+cd ..
 
+# install nvm
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+# relogin
 exit
 
+# build and start the explorer
 bash build_explorer.sh
 cp *.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
 cd crypticcoin-explorer/
