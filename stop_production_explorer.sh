@@ -5,4 +5,4 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-pm2 stop all
+pm2 stop block_explorer
