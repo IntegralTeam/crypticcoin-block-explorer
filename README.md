@@ -36,6 +36,9 @@ exit
 bash build_explorer.sh
 cp *.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
 cd crypticcoin-explorer/
+# make sure crypticcoind isn't running already (ps -A | grep crypticcoind)
+# make sure you have rights to bind to your port (For example, port 80 requires special rights)
+# check logs in data/debug.log if have any problem
 bash start_explorer.sh
 
 ```
