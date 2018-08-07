@@ -44,6 +44,12 @@ echo
 
 
 echo "---------------"
+echo "installing tor"
+echo
+
+sudo apt-get -y install tor
+
+echo "---------------"
 echo "creating config files"
 echo
 
@@ -75,6 +81,7 @@ EOF
 
 # create .conf
 cat << EOF > ./data/crypticcoin.conf
+tor_exe_path=/usr/bin/tor
 addnode=2yt4fstq5oacwwh5.onion
 server=1
 listen=1

@@ -49,6 +49,7 @@ cd crypticcoin-explorer/
 # make sure "servicesConfig"."exec" inside crypticcoin-explorer/bitcore-node.json points to your crypticcoind executable.
 # make sure crypticcoind isn't running already (ps -A | grep crypticcoind)
 # make sure you have rights to bind to your port (For example, port 80 requires special rights)
+# make sure tor_exe_path (inside data/crypticcoin.conf) points to your tor installation.
 # check logs in data/debug.log if have any problem
 bash start_explorer.sh
 
