@@ -12,14 +12,15 @@ sudo apt-get update
 sudo apt-get -y install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget curl bsdmainutils automake
 
 # get source codes for the explorer and daemon
-git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git
+git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git ./crypticcoin-block-explorer
 
-cp ./crypticcoin-block-explorer/block-explorer.sh ./block-explorer.sh
+cp ./crypticcoin-block-explorer/build_explorer.sh ./build_explorer.sh
+cp ./crypticcoin-block-explorer/getAndBuildNodeJS-4.9.1.sh ./getAndBuildNodeJS-4.9.1.sh
 
-git clone https://github.com/crypticcoinvip/CrypticCoin.git
+git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch Bitcore ./CrypticCoin
 
 # build the daemon
-cd secretcoin
+cd CrypticCoin
 
 ./zcutil/fetch-params.sh
 
@@ -44,7 +45,7 @@ exit
 
 # build and start the explorer
 bash build_explorer.sh
-cp *.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
+cp ./crypticcoin-block-explorer/*.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
 cd crypticcoin-explorer/
 # make sure "servicesConfig"."exec" inside crypticcoin-explorer/bitcore-node.json points to your crypticcoind executable.
 # make sure crypticcoind isn't running already (ps -A | grep crypticcoind)

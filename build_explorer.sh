@@ -68,7 +68,7 @@ cat << EOF > bitcore-node.json
     "bitcoind": {
       "spawn": {
         "datadir": "./data",
-        "exec": "./secretcoin/src/crypticcoind"
+        "exec": "../CrypticCoin/src/crypticcoind"
       },
       "insight-ui-crypticcoin": {
         "routePrefix" : ""
