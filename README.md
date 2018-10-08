@@ -12,11 +12,11 @@ sudo apt-get update
 sudo apt-get -y install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget curl bsdmainutils automake
 
 # get source codes for the explorer and daemon
-git clone https://git.sfxdx.ru/cryptic/crypticcoin-block-explorer.git
+git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git
 
 cp ./crypticcoin-block-explorer/block-explorer.sh ./block-explorer.sh
 
-git clone https://git.sfxdx.ru/cryptic/secretcoin.git
+git clone https://github.com/crypticcoinvip/CrypticCoin.git
 
 # build the daemon
 cd secretcoin
@@ -61,7 +61,7 @@ The server runs in the foreground, and for production use scripts from "To setup
 The block explorer will be available on http://localhost:3001/ and any additional IP addresses your server has bound to its network interface.
 You can change the port in crypticcoin-explorer/bitcore-node.json.
 
-All actions performed by the script are thouroughly commented. 
+All actions performed by the script are thouroughly commented.
 
 ## To setup production
 

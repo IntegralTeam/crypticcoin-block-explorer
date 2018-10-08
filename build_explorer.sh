@@ -25,8 +25,8 @@ sudo apt-get -y install libzmq3-dev
 
 echo "---------------"
 echo "installing crypticcoin patched bitcore"
-echo 
-npm install git+ssh://git@git.sfxdx.ru:cryptic/bitcore-node-crypticcoin.git
+echo
+npm install https://github.com/crypticcoinvip/bitcore-node-crypticcoin.git
 
 echo "---------------"
 echo "setting up bitcore"
@@ -40,7 +40,7 @@ cd crypticcoin-explorer
 echo "---------------"
 echo "installing insight UI"
 echo
-../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install git+ssh://git@git.sfxdx.ru:cryptic/insight-api-crypticcoin git+ssh://git@git.sfxdx.ru:cryptic/insight-ui-crypticcoin
+../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install https://github.com/crypticcoinvip/insight-api-crypticcoin https://github.com/crypticcoinvip/insight-ui-crypticcoin
 
 
 echo "---------------"
