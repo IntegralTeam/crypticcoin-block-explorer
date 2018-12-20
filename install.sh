@@ -25,12 +25,12 @@ sudo apt-get -y install tor
 echo "---------------"
 echo "get source codes and build the daemon"
 echo
-#git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch sapling-explorer ./CrypticCoin
+git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch sapling-explorer ./CrypticCoin
 # build the daemon
-#cd CrypticCoin
-#./zcutil/fetch-params.sh
-#./zcutil/build.sh -j$(nproc)
-#cd ..
+cd CrypticCoin
+./zcutil/fetch-params.sh
+./zcutil/build.sh -j$(nproc)
+cd ..
 
 echo "---------------"
 echo "installing nvm"
