@@ -112,8 +112,8 @@ zmqpuawtx=1
 zmqpubrawtx=tcp://127.0.0.1:18332
 zmqpubhashblock=tcp://127.0.0.1:18332
 rpcallowip=127.0.0.1
-rpcuser=bitcoin
-rpcpassword=local321
+rpcuser=cryp_explorer
+rpcpassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 26 ; echo '')
 uacomment=bitcore
 showmetrics=0
 
