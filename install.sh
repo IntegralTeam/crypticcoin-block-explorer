@@ -96,9 +96,10 @@ EOF
 # create .conf
 cat << EOF > ./data/crypticcoin.conf
 tor_exe_path=/usr/bin/tor
-bind=127.0.0.1
-onlynet=onion
-addnode=2yt4fstq5oacwwh5.onion
+addnode=5wa52xtesl4yjnhp.onion:23303
+addnode=axjnhxwkhaqle7dh.onion:23303
+onion=1
+listenonion=1
 server=1
 listen=1
 testnet=0
