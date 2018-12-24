@@ -49,7 +49,7 @@ nvm install v4
 echo "---------------"
 echo "installing crypticcoin patched bitcore"
 echo
-npm install https://github.com/crypticcoinvip/bitcore-node-crypticcoin.git#sapling
+npm install "https://github.com/crypticcoinvip/bitcore-node-crypticcoin.git#sapling"
 
 echo "---------------"
 echo "setting up bitcore"
@@ -61,7 +61,7 @@ cd crypticcoin-explorer
 echo "---------------"
 echo "installing insight UI"
 echo
-../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install https://github.com/crypticcoinvip/insight-api-crypticcoin#sapling https://github.com/crypticcoinvip/insight-ui-crypticcoin#sapling
+../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install "https://github.com/crypticcoinvip/insight-api-crypticcoin#sapling" "https://github.com/crypticcoinvip/insight-ui-crypticcoin#sapling"
 
 echo "---------------"
 echo "creating config files"
@@ -130,7 +130,7 @@ echo "get explorer scripts"
 echo
 
 cd ..
-git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git ./crypticcoin-block-explorer
+git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git --branch sapling ./crypticcoin-block-explorer
 # copy scripts inside crypticcoin-explorer directory
 cp ./crypticcoin-block-explorer/*.sh crypticcoin-explorer/
 cd crypticcoin-explorer
