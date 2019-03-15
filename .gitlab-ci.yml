@@ -5,7 +5,7 @@ deleted:
   - mkdir /var/lib/gitlab-runner/builds/1d9ea636/0/cryptic/crypticcoin-block-explorer
 mirror:
   script:
-  - git git clone http://gitlab-ci-token:${CI_BUILD_TOKEN}@git.sfxdx.ru/cryptic/crypticcoin-block-explorer.git
+  - git clone http://gitlab-ci-token:${CI_BUILD_TOKEN}@git.sfxdx.ru/cryptic/crypticcoin-block-explorer.git
   - git config --global user.name "${GITLAB_USER_NAME}"
   - git config --global user.email "${GITLAB_USER_EMAIL}"
   - git add --all
