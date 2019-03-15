@@ -25,7 +25,7 @@ sudo apt-get -y install tor
 echo "---------------"
 echo "get source codes and build the daemon"
 echo
-git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch sapling-explorer ./CrypticCoin
+git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch block-explorer ./CrypticCoin
 # build the daemon
 cd CrypticCoin
 ./zcutil/fetch-params.sh
