@@ -4,58 +4,13 @@ Script to install and setup a CrypticCoin block explorer on Ubuntu 16.x or newer
 
 ## To run locally
 
-On a fresh Ubuntu/Debian server, from a non-root user's home directory, run the following commands:
+On a fresh Ubuntu/Debian server, from a non-root user's home directory, run the following command:
 ```
-# get the packages
-sudo apt-get update
-
-sudo apt-get -y install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget curl bsdmainutils automake
-
-# get source codes for the explorer and daemon
-git clone https://github.com/crypticcoinvip/crypticcoin-block-explorer.git ./crypticcoin-block-explorer
-
-cp ./crypticcoin-block-explorer/build_explorer.sh ./build_explorer.sh
-cp ./crypticcoin-block-explorer/getAndBuildNodeJS-4.9.1.sh ./getAndBuildNodeJS-4.9.1.sh
-
-git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch Bitcore ./CrypticCoin
-
-# build the daemon
-cd CrypticCoin
-
-./zcutil/fetch-params.sh
-
-./zcutil/build.sh -j$(nproc)
-
-cd ..
-
-# install NodeJS
-bash getAndBuildNodeJS-4.9.1.sh
-cd node-4.9.1/
-sudo make install
-cd ..
-
-# install nvm
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-# relogin
-exit
-
-# build and start the explorer
-bash build_explorer.sh
-cp ./crypticcoin-block-explorer/*.sh crypticcoin-explorer/ # copy scripts inside crypticcoin-explore directory
-cd crypticcoin-explorer/
-# make sure "servicesConfig"."exec" inside crypticcoin-explorer/bitcore-node.json points to your crypticcoind executable.
-# make sure crypticcoind isn't running already (ps -A | grep crypticcoind)
-# make sure you have rights to bind to your port (For example, port 80 requires special rights)
-# make sure tor_exe_path (inside data/crypticcoin.conf) points to your tor installation.
-# check logs in data/debug.log if have any problem
-bash start_explorer.sh
-
+wget -qO- https://raw.githubusercontent.com/crypticcoinvip/crypticcoin-block-explorer/sapling/install.sh | bash
 ```
-The script requires you to logout when it is finished, log back in and run build_explorer.sh and start_explorer.sh.
+or get and run 'install.sh' script manually.
+
+Then check config files and run start_explorer.sh.
 
 The server runs in the foreground, and for production use scripts from "To setup production" section.
 
