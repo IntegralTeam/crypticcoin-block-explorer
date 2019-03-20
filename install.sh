@@ -46,6 +46,8 @@ echo "switch node setup with nvm"
 echo
 nvm install v4
 
+sudo apt-get -y install npm
+
 echo "---------------"
 echo "installing crypticcoin patched bitcore"
 echo
