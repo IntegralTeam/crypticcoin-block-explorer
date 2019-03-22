@@ -71,7 +71,7 @@ echo "installing insight UI/API"
 echo
 
 services='"bitcoind", "insight-api-crypticcoin", "web"'
-if [ "x$1" == "x--api-only" ]
+if [ "x${1-}" == "x--api-only" ]
 then
   ../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install "https://github.com/crypticcoinvip/insight-api-crypticcoin"
 else
