@@ -6,7 +6,7 @@ Script to install and setup a CrypticCoin block explorer on Ubuntu 16.x or newer
 
 On a fresh Ubuntu/Debian server, from a non-root user's home directory, run the following command:
 ```
-wget -qO- https://raw.githubusercontent.com/crypticcoinvip/crypticcoin-block-explorer/master/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/crypticcoinvip/crypticcoin-block-explorer/master/install.sh | bash /dev/stdin [--api-only]
 ```
 or get and run 'install.sh' script manually.
 

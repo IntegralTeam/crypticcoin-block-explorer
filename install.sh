@@ -22,20 +22,26 @@ echo "installing tor"
 echo
 sudo apt-get -y install tor
 
-echo "---------------"
-echo "get source codes and build the daemon"
-echo
-git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch block-explorer ./CrypticCoin
-# build the daemon
-cd CrypticCoin
-./zcutil/fetch-params.sh
-./zcutil/build.sh -j$(nproc)
-cd ..
+if [ ! -d CrypticCoin ]
+then
+  echo "---------------"
+  echo "get source codes and build the daemon"
+  echo
+  git clone https://github.com/crypticcoinvip/CrypticCoin.git --branch block-explorer ./CrypticCoin
+  # build the daemon
+  cd CrypticCoin
+  ./zcutil/fetch-params.sh
+  ./zcutil/build.sh -j$(nproc)
+  cd ..
+fi
 
-echo "---------------"
-echo "installing nvm"
-echo
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+if [ ! -d $HOME/.nvm ]
+then
+  echo "---------------"
+  echo "installing nvm"
+  echo
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+fi
 
 # nvm setup
 export NVM_DIR="$HOME/.nvm"
@@ -61,9 +67,18 @@ echo
 cd crypticcoin-explorer
 
 echo "---------------"
-echo "installing insight UI"
+echo "installing insight UI/API"
 echo
-../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install "https://github.com/crypticcoinvip/insight-api-crypticcoin" "https://github.com/crypticcoinvip/insight-ui-crypticcoin"
+
+services='"bitcoind", "insight-api-crypticcoin", "web"'
+if [ "x$1" == "x--api-only" ]
+then
+  ../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install "https://github.com/crypticcoinvip/insight-api-crypticcoin"
+else
+  ../node_modules/bitcore-node-crypticcoin/bin/bitcore-node install "https://github.com/crypticcoinvip/insight-api-crypticcoin" "https://github.com/crypticcoinvip/insight-ui-crypticcoin"
+  services="$services, \"insight-ui-crypticcoin\""
+fi
+
 
 echo "---------------"
 echo "creating config files"
@@ -74,12 +89,7 @@ cat << EOF > bitcore-node.json
 {
   "network": "mainnet",
   "port": 3001,
-  "services": [
-    "bitcoind",
-    "insight-api-crypticcoin",
-    "insight-ui-crypticcoin",
-    "web"
-  ],
+  "services": [ $services ],
   "servicesConfig": {
     "bitcoind": {
       "spawn": {
