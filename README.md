@@ -15,7 +15,7 @@ To install only API:
 wget -qO- https://raw.githubusercontent.com/crypticcoinvip/crypticcoin-block-explorer/master/install.sh | bash /dev/stdin --api-only
 ```
 
-Then check config files and run start_explorer.sh.
+Then check config files and run ```bash crypticcoin-explorer/start_explorer.sh```.
 
 The server runs in the foreground, and for production use scripts from "To setup production" section.
 
@@ -28,15 +28,15 @@ All actions performed by the script are thouroughly commented.
 
 ##### Start in production mode:
 ```
-bash start_production_explorer.sh
+bash crypticcoin-explorer/start_production_explorer.sh
 ```
 ##### Stop:
 ```
-bash stop_production_explorer.sh
+bash crypticcoin-explorer/stop_production_explorer.sh
 ```
 ##### Monitoring:
 ```
-bash monitor_production_explorer.sh
+bash crypticcoin-explorer/monitor_production_explorer.sh
 ```
 
 
